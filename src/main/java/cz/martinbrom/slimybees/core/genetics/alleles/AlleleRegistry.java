@@ -49,12 +49,12 @@ public class AlleleRegistry {
      */
     @SuppressWarnings("unchecked")
     public <T extends Allele> void register(ChromosomeType type, T allele) {
-        Validate.notNull(type, "Cannot register an Allele for null ChromosomeType!");
-        Validate.notNull(allele, "Cannot register a null Allele!");
+        Validate.notNull(type, "无法为零染色体类型注册等位基因!");
+        Validate.notNull(allele, "无法注册空等位基因!");
 
         if (!type.getAlleleClass().isAssignableFrom(allele.getClass())) {
-            throw new IllegalArgumentException("Allele class (" + allele.getClass()
-                    + ") does not match required ChromosomeType class (" + type.getAlleleClass() + ")!");
+            throw new IllegalArgumentException("等位基因类 (" + allele.getClass()
+                    + ") 与所需的染色体类型类不匹配 (" + type.getAlleleClass() + ")!");
         }
 
         Map<String, T> alleleMap = (Map<String, T>) allelesByChromosomeType.computeIfAbsent(type, k -> new LinkedHashMap<>());
@@ -72,9 +72,9 @@ public class AlleleRegistry {
      * @param <V> The type of the {@link AlleleValue} that is used to create the {@link Allele} instance
      */
     public <T, V extends AlleleValue<T>> void register(ChromosomeType type, V alleleValue, String uid) {
-        Validate.notNull(type, "The chromosome type cannot be null!");
-        Validate.notEmpty(uid, "The allele uid cannot be null or empty!");
-        Validate.notNull(alleleValue, "The allele value cannot be null!");
+        Validate.notNull(type, "染色体类型不能为空!");
+        Validate.notEmpty(uid, "等位基因 uid 不能为无或空!");
+        Validate.notNull(alleleValue, "等位基因值不能为空!");
 
         boolean dominant = alleleValue.isDominant();
         T value = alleleValue.getValue();
@@ -94,7 +94,7 @@ public class AlleleRegistry {
             AlleleEffect allele = new AlleleEffect(uid, name, (AlleleEffect.EffectFunction) value, dominant);
             register(type, allele);
         } else {
-            throw new IllegalArgumentException("Could not create allele for uid: " + uid + " and value " + valueClass);
+            throw new IllegalArgumentException("无法为 uid 创建等位基因: " + uid + " 和变量 " + valueClass);
         }
     }
 

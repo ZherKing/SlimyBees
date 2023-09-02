@@ -18,7 +18,7 @@ public class AlleleEffect extends Allele {
     public AlleleEffect(String uid, String name, EffectFunction effectFunction, boolean dominant) {
         super(uid, name, dominant);
 
-        Validate.notNull(effectFunction, "The effect function cannot be null!");
+        Validate.notNull(effectFunction, "效果函数不能为空!");
 
         this.effectFunction = effectFunction;
     }

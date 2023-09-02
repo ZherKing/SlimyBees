@@ -16,13 +16,13 @@ public class AlleleService {
     }
 
     public void set(Allele[] template, ChromosomeType type, String uid) {
-        Validate.notNull(template, "Cannot update null allele template!");
-        Validate.notNull(type, "Cannot update alleles belonging to null ChromosomeType!");
-        Validate.notNull(uid, "Cannot update alleles by allele with null uid!");
+        Validate.notNull(template, "无法更新空等位基因模板!");
+        Validate.notNull(type, "无法更新属于空染色体类型的等位基因!");
+        Validate.notNull(uid, "无法通过等位基因更新具有空 uid 的等位基因!");
 
         Allele allele = alleleRegistry.get(type, uid);
         if (allele == null) {
-            throw new IllegalArgumentException("There is no Allele for type: " + type + " and uid: " + uid);
+            throw new IllegalArgumentException("这里没有该类型的等位基因: " + type + " 和 uid: " + uid);
         }
 
         template[type.ordinal()] = allele;

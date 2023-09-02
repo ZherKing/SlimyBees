@@ -16,7 +16,7 @@ public class AlleleValue<T> {
     }
 
     public AlleleValue(T value, boolean dominant) {
-        Validate.notNull(value, "Cannot create AlleleValue from null value!");
+        Validate.notNull(value, "无法从空值创建等位基因值!");
 
         this.value = value;
         this.dominant = dominant;
