@@ -4,6 +4,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -69,7 +70,7 @@ public abstract class AbstractBeeAtlasCategory extends FlexItemGroup {
 
         SurvivalSlimefunGuide guide = (SurvivalSlimefunGuide) Slimefun.getRegistry().getSlimefunGuide(mode);
         menu.setEmptySlotsClickable(false);
-        menu.addMenuOpeningHandler(pl -> pl.playSound(pl.getLocation(), guide.getSound(), 1, 1));
+        menu.addMenuOpeningHandler(pl -> pl.playSound(pl.getLocation(), SoundEffect.GUIDE_BUTTON_CLICK_SOUND.getDefaultSoundId(), 1, 1));
         guide.createHeader(p, profile, menu);
 
         // remove the search
