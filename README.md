@@ -6,7 +6,7 @@
 
 **该附属暂未汉化完成。**
 
-SlimyBees 是一款 Slimefun4 插件，其灵感来源于著名林业mod
+SlimyBees 是一款 Slimefun4 插件，其灵感来源于
 [Forestry](https://www.curseforge.com/minecraft/mc-mods/forestry).
 它增加了许多蜜蜂物种，可以被发现、繁殖并用于生产各种材料。
 
