@@ -6,7 +6,7 @@
     <groupId>cz.martinbrom</groupId>
     <artifactId>SlimyBees</artifactId>
 
-    <version>1.0.0-UNOFFICIAL</version>
+    <version>1.1.0-UNOFFICIAL</version>
     <packaging>jar</packaging>
 
     <description>SlimyBees is a Slimefun4 addon heavily inspired by the bee portion of the famous MC mod, Forestry.</description>
