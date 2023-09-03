@@ -87,13 +87,13 @@ public abstract class AbstractElectricMachine extends AbstractMachine implements
      * @return This method will return the current instance of {@link AbstractElectricMachine}, so that can be chained.
      */
     public final AbstractElectricMachine setCapacity(int capacity) {
-        Validate.isTrue(capacity > 0, "The capacity must be greater than zero!");
+        Validate.isTrue(capacity > 0, "容量必须大于零!");
 
         if (getState() == ItemState.UNREGISTERED) {
             this.energyCapacity = capacity;
             return this;
         } else {
-            throw new IllegalStateException("You cannot modify the capacity after the Item was registered.");
+            throw new IllegalStateException("注册物料后，无法修改容量.");
         }
     }
 
@@ -104,7 +104,7 @@ public abstract class AbstractElectricMachine extends AbstractMachine implements
      * @return This method will return the current instance of {@link AbstractElectricMachine}, so that can be chained.
      */
     public final AbstractElectricMachine setProcessingSpeed(int speed) {
-        Validate.isTrue(speed > 0, "The speed must be greater than zero!");
+        Validate.isTrue(speed > 0, "花费时间必须大于零!");
 
         this.processingSpeed = speed;
         return this;
@@ -117,9 +117,9 @@ public abstract class AbstractElectricMachine extends AbstractMachine implements
      * @return This method will return the current instance of {@link AbstractElectricMachine}, so that can be chained.
      */
     public final AbstractElectricMachine setEnergyConsumption(int energyConsumption) {
-        Validate.isTrue(energyConsumption > 0, "The energy consumption must be greater than zero!");
-        Validate.isTrue(energyCapacity > 0, "You must specify the capacity before you can set the consumption amount.");
-        Validate.isTrue(energyConsumption <= energyCapacity, "The energy consumption cannot be higher than the capacity (" + energyCapacity + ')');
+        Validate.isTrue(energyConsumption > 0, "能耗必须大于零!");
+        Validate.isTrue(energyCapacity > 0, "必须先指定容量，然后才能设置消耗量.");
+        Validate.isTrue(energyConsumption <= energyCapacity, "能耗不能高于容量 (" + energyCapacity + ')');
 
         this.energyConsumedPerTick = energyConsumption;
         return this;
@@ -142,7 +142,7 @@ public abstract class AbstractElectricMachine extends AbstractMachine implements
      * @return Whether charge was taken if its chargeable
      */
     protected boolean takeCharge(Location l) {
-        Validate.notNull(l, "Can't attempt to take charge from a null location!");
+        Validate.notNull(l, "无法尝试从空位置接管费用!");
 
         if (isChargeable()) {
             int charge = getCharge(l);

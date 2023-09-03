@@ -25,8 +25,8 @@ public class CustomCraftingOperation implements MachineOperation {
     }
 
     public CustomCraftingOperation(List<ItemStack> ingredients, List<ItemStack> outputs, int totalTicks) {
-        Validate.notNull(ingredients, "The ingredients cannot be empty or null!");
-        Validate.notNull(outputs, "The outputs cannot be null!");
+        Validate.notNull(ingredients, "成分不能为空或为空!");
+        Validate.notNull(outputs, "输出不能为空!");
         Validate.isTrue(totalTicks >= 0, "The amount of total ticks must be a positive integer or zero, received: " + totalTicks);
 
         this.ingredients = ingredients;

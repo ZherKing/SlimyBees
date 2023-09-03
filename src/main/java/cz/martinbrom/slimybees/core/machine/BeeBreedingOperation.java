@@ -25,11 +25,11 @@ public class BeeBreedingOperation implements MachineOperation {
 
     public BeeBreedingOperation(ItemStack firstParent, ItemStack secondParent, BreedingResultDTO result,
                                 List<ItemStack> products, Consumer<Location> effectFunction) {
-        Validate.notNull(firstParent, "The first parent cannot be null!");
-        Validate.notNull(secondParent, "The second parent cannot be null!");
-        Validate.notNull(result, "The breeding result cannot be null!");
-        Validate.notNull(products, "The products cannot be null!");
-        Validate.notNull(effectFunction, "The effect function cannot be null!");
+        Validate.notNull(firstParent, "第一个父项不能为空!");
+        Validate.notNull(secondParent, "第二个父项不能为空!");
+        Validate.notNull(result, "育种结果不能为空!");
+        Validate.notNull(products, "产品不能为空!");
+        Validate.notNull(effectFunction, "效果函数不能为空!");
 
         this.parents = new ItemStack[] { firstParent, secondParent };
         this.result = result;
