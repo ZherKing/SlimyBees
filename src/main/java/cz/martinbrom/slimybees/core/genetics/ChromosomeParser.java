@@ -26,7 +26,7 @@ public class ChromosomeParser {
 
     @Nonnull
     public Chromosome parseSpecies(String speciesStr) {
-        Validate.notNull(speciesStr, "The serialized species cannot be null!");
+        Validate.notNull(speciesStr, "序列化物种不能为空!");
 
         String[] parts = speciesStr.split(DELIMITER);
         Allele firstAllele = validateOrGetDefault(alleleRegistry.get(ChromosomeType.SPECIES, parts[0]), ChromosomeType.SPECIES, parts[0]);
@@ -56,7 +56,7 @@ public class ChromosomeParser {
 
     @Nonnull
     public String serialize(Chromosome chromosome) {
-        Validate.notNull(chromosome, "Cannot serialize a null chromosome!");
+        Validate.notNull(chromosome, "无法序列化零染色体!");
 
         return chromosome.getPrimaryAllele().getUid() + DELIMITER + chromosome.getSecondaryAllele().getUid();
     }

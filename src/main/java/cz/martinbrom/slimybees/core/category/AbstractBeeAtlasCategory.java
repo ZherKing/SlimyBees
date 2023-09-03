@@ -65,7 +65,7 @@ public abstract class AbstractBeeAtlasCategory extends FlexItemGroup {
         }
 
         String suffix = getTitleSuffix();
-        String title = "Bee Atlas" + (suffix == null ? "" : " - " + suffix);
+        String title = "蜜蜂图谱" + (suffix == null ? "" : " - " + suffix);
         ChestMenu menu = createMenu(title);
 
         SurvivalSlimefunGuide guide = (SurvivalSlimefunGuide) Slimefun.getRegistry().getSlimefunGuide(mode);

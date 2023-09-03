@@ -25,7 +25,7 @@ public class GenomeParser {
 
     @Nonnull
     public Genome parse(String genomeStr) {
-        Validate.notNull(genomeStr, "Serialized genome cannot be null");
+        Validate.notNull(genomeStr, "序列化基因组不能为空");
 
         String[] parts = genomeStr.split("\\" + DELIMITER);
 

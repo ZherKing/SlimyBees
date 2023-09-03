@@ -64,8 +64,8 @@ public class BeeGeneticService {
      */
     @Nonnull
     public BreedingResultDTO breed(Genome princessGenome, Genome droneGenome, BreedingModifierDTO modifier) {
-        Validate.notNull(princessGenome, "The princess genome must not be null!");
-        Validate.notNull(droneGenome, "The drone genome must not be null!");
+        Validate.notNull(princessGenome, "公主基因组不能为空!");
+        Validate.notNull(droneGenome, "无人机基因组不得为空!");
 
         // create drones
         Genome[] genomes = getChildrenGenomes(princessGenome, droneGenome);
@@ -90,8 +90,8 @@ public class BeeGeneticService {
      * @return {@link Genome} for each child created by the breeding process
      */
     private Genome[] getChildrenGenomes(Genome firstGenome, Genome secondGenome) {
-        Validate.notNull(firstGenome, "The first genome cannot null!");
-        Validate.notNull(secondGenome, "The second genome cannot null!");
+        Validate.notNull(firstGenome, "第一个基因组不能为零!");
+        Validate.notNull(secondGenome, "第二个基因组不能为零!");
 
         int fertilityValue = chooseRandom(firstGenome, secondGenome).getFertilityValue();
         int childrenCount = 1 + ThreadLocalRandom.current().nextInt(fertilityValue);
@@ -265,7 +265,7 @@ public class BeeGeneticService {
      */
     @Nullable
     public ItemStack alterItemGenome(ItemStack item, ChromosomeType type, String alleleUid, boolean primary, boolean secondary) {
-        Validate.notNull(item, "Cannot change a chromosome value for null item!");
+        Validate.notNull(item, "无法更改空项目的染色体值!");
 
         SlimefunItem sfItem = SlimefunItem.getByItem(item);
         if (sfItem instanceof AbstractBee) {
@@ -322,11 +322,11 @@ public class BeeGeneticService {
      */
     @Nullable
     private Genome alterGenome(Genome genome, ChromosomeType type, String alleleUid, boolean primary, boolean secondary) {
-        Validate.notNull(genome, "Cannot change a chromosome value for null Genome!");
-        Validate.notNull(type, "Cannot change a chromosome value for null ChromosomeType!");
-        Validate.isTrue(type != ChromosomeType.SPECIES, "Cannot alter the species of a bee directly!");
-        Validate.notNull(alleleUid, "Cannot change a chromosome value for null allele uid!");
-        Validate.isTrue(primary || secondary, "At least one allele has to be altered!");
+        Validate.notNull(genome, "无法更改零基因组的染色体值!");
+        Validate.notNull(type, "无法更改空染色体类型的染色体值!");
+        Validate.isTrue(type != ChromosomeType.SPECIES, "不能直接改变蜜蜂的种类!");
+        Validate.notNull(alleleUid, "无法更改空等位基因 uid 的染色体值!");
+        Validate.isTrue(primary || secondary, "必须改变至少一个等位基因!");
 
         Chromosome[] chromosomes = genome.getChromosomes();
         Chromosome chromosome = chromosomes[type.ordinal()];

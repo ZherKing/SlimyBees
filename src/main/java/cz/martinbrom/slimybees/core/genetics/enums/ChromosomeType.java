@@ -43,8 +43,8 @@ public enum ChromosomeType {
     private final boolean displayAllValues;
 
     ChromosomeType(Class<? extends Allele> cls, ItemStack displayItem, boolean displayAllValues) {
-        Validate.notNull(cls, "ChromosomeType allele class cannot be null!");
-        Validate.notNull(displayItem, "ChromosomeType display item cannot be null!");
+        Validate.notNull(cls, "染色体类型等位基因类不能为空!");
+        Validate.notNull(displayItem, "染色体类型显示项不能为空!");
 
         this.cls = cls;
         displayName = StringUtils.humanizeSnake(name());
