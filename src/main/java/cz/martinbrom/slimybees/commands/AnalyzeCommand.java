@@ -21,7 +21,7 @@ public class AnalyzeCommand extends AbstractCommand {
     private final BeeAnalysisService analysisService;
 
     public AnalyzeCommand(BeeAnalysisService analysisService) {
-        super("analyze", "Analyzes unknown bees and updates the lore.", "slimybees.command.analyze");
+        super("分析", "分析未知蜜蜂并更新知识.", "slimybees.command.analyze");
 
         this.analysisService = analysisService;
     }
@@ -35,7 +35,7 @@ public class AnalyzeCommand extends AbstractCommand {
 
         if (args.length != 1 && args.length != 2) {
             // TODO: 04.06.21 Common method to print usage with colors and stuff
-            sender.sendMessage("Usage: /slimybees analyze [hand | all]");
+            sender.sendMessage("用法: /slimybees analyze [hand | all]");
             return;
         }
 
@@ -48,16 +48,16 @@ public class AnalyzeCommand extends AbstractCommand {
         } else if (args[1].equals("all")) {
             analyzedCount = analyzeInventory(p);
         } else {
-            sender.sendMessage("Usage: /slimybees analyze [hand | all]");
+            sender.sendMessage("用法: /slimybees analyze [hand | all]");
             return;
         }
 
         if (analyzedCount > 0) {
-            sender.sendMessage(ChatColor.GREEN + "Successfully analyzed "
+            sender.sendMessage(ChatColor.GREEN + "成功分析 "
                     + ChatColor.BOLD + analyzedCount
-                    + ChatColor.RESET + ChatColor.GREEN + " bee" + (analyzedCount > 1 ? "s" : "") + "!");
+                    + ChatColor.RESET + ChatColor.GREEN + " 蜜蜂" + (analyzedCount > 1 ? "s" : "") + "!");
         } else {
-            sender.sendMessage(ChatColor.DARK_GRAY + "Did not find any bees to analyze!");
+            sender.sendMessage(ChatColor.DARK_GRAY + "没有找到任何蜜蜂进行分析!");
         }
     }
 

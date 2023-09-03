@@ -24,7 +24,7 @@ public class DiscoverCommand extends AbstractCommand {
     private final AlleleRegistry alleleRegistry;
 
     public DiscoverCommand(BeeDiscoveryService beeDiscoveryService, AlleleRegistry alleleRegistry) {
-        super("discover", "Marks given bee species as discovered", "slimybees.command.discover");
+        super("发现", "发现的蜜蜂物种标记", "slimybees.command.discover");
 
         this.beeDiscoveryService = beeDiscoveryService;
         this.alleleRegistry = alleleRegistry;
@@ -39,7 +39,7 @@ public class DiscoverCommand extends AbstractCommand {
 
         if (args.length != 2) {
             // TODO: 04.06.21 Common method to print usage with colors and stuff
-            sender.sendMessage("Usage: /slimybees discover <species | all | reset>");
+            sender.sendMessage("用法: /slimybees discover <species | all | reset>");
             return;
         }
 
@@ -49,7 +49,7 @@ public class DiscoverCommand extends AbstractCommand {
             discoverAll(p);
         } else if (args[1].equals("reset")) {
             beeDiscoveryService.undiscoverAll(p);
-            p.sendMessage(ChatColor.GREEN + "Succesfully marked all bees as undiscovered!");
+            p.sendMessage(ChatColor.GREEN + "成功地将所有蜜蜂标记为未被发现!");
         } else {
             discoverSpecies(p, args[1]);
         }
@@ -59,11 +59,11 @@ public class DiscoverCommand extends AbstractCommand {
         long discoveredCount = beeDiscoveryService.discoverAll(p);
         if (discoveredCount > 0) {
             String countSuffix = discoveredCount == 1 ? "" : "s";
-            p.sendMessage(ChatColor.GREEN + "Succesfully marked "
+            p.sendMessage(ChatColor.GREEN + "成功标记 "
                     + ChatColor.BOLD + discoveredCount
-                    + ChatColor.RESET + ChatColor.GREEN + " bee" + countSuffix + " as discovered!");
+                    + ChatColor.RESET + ChatColor.GREEN + " 蜜蜂" + countSuffix + " 发现了!");
         } else {
-            p.sendMessage(ChatColor.DARK_GRAY + "There are no more bees to discover!");
+            p.sendMessage(ChatColor.DARK_GRAY + "没有更多的蜜蜂可以发现!");
         }
     }
 
@@ -72,10 +72,10 @@ public class DiscoverCommand extends AbstractCommand {
         AlleleSpecies species = ((AlleleSpecies) alleleRegistry.get(ChromosomeType.SPECIES, uid));
         if (species != null) {
             if (!beeDiscoveryService.discover(p, species)) {
-                p.sendMessage(ChatColor.DARK_GRAY + "You have already discovered this species!");
+                p.sendMessage(ChatColor.DARK_GRAY + "你已经发现了这个物种!");
             }
         } else {
-            p.sendMessage(ChatColor.RED + "Did not find any bee species with the name: "
+            p.sendMessage(ChatColor.RED + "没有找到任何有名字的蜜蜂物种: "
                     + ChatColor.BOLD + speciesName
                     + ChatColor.RESET + ChatColor.RED + "!");
         }

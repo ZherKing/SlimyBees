@@ -76,7 +76,7 @@ public class CommandTabExecutor implements TabExecutor {
         }
 
         if (!found) {
-            sender.sendMessage(ChatColors.color("&3No available commands!"));
+            sender.sendMessage(ChatColors.color("&3无可用命令!"));
         }
     }
 

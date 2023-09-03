@@ -24,7 +24,7 @@ public class GlobalProgressCommand extends AbstractCommand {
     private final AlleleRegistry alleleRegistry;
 
     public GlobalProgressCommand(BeeDiscoveryService discoveryService, AlleleRegistry alleleRegistry) {
-        super("globalprogress", "Shows the global discovery progress.");
+        super("全局进展", "显示全局发现进度.");
 
         this.discoveryService = discoveryService;
         this.alleleRegistry = alleleRegistry;
@@ -54,7 +54,7 @@ public class GlobalProgressCommand extends AbstractCommand {
         // add global discovery header
         int size = countsByPlayerName.size();
         List<String> messages = new ArrayList<>();
-        messages.add(ChatColor.GRAY + "Global discovery progress" + ChatColor.WHITE + " (" + discoveredSpecies +  " / " + totalSpecies + ")");
+        messages.add(ChatColor.GRAY + "全局发现进度" + ChatColor.WHITE + " (" + discoveredSpecies +  " / " + totalSpecies + ")");
         messages.add("");
 
         // create a list of all players who hold a global discovery
@@ -66,7 +66,7 @@ public class GlobalProgressCommand extends AbstractCommand {
                 messages.add(color + entry.getKey() + ": " + entry.getValue());
             }
         } else {
-            messages.add(ChatColor.DARK_GRAY + "No discoveries yet. Good luck!");
+            messages.add(ChatColor.DARK_GRAY + "还没有发现。祝你好运!");
         }
 
         p.sendMessage(messages.toArray(new String[0]));

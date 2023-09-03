@@ -21,7 +21,7 @@ public class MakeUnknownCommand extends AbstractCommand {
     private final BeeLoreService loreService;
 
     public MakeUnknownCommand(BeeLoreService loreService) {
-        super("makeunknown", "Makes the bee unknown.", "slimybees.command.make_unknown");
+        super("makeunknown", "让这个蜜蜂未知.", "slimybees.command.make_unknown");
 
         this.loreService = loreService;
     }
@@ -39,9 +39,9 @@ public class MakeUnknownCommand extends AbstractCommand {
         ItemStack result = loreService.makeUnknown(inv.getItemInMainHand());
         if (loreService.isUnknown(result)) {
             inv.setItemInMainHand(result);
-            p.sendMessage(ChatColor.GREEN + "Successfully made the bee unknown!");
+            p.sendMessage(ChatColor.GREEN + "成功使蜜蜂变成未知!");
         } else {
-            p.sendMessage(ChatColor.DARK_GRAY + "The item in your hand is not a valid bee!");
+            p.sendMessage(ChatColor.DARK_GRAY + "您手中的物品不是有效的蜜蜂!");
         }
     }
 
