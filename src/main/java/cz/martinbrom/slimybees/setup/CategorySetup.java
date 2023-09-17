@@ -23,14 +23,14 @@ public class CategorySetup {
 
     public static void setUp(SlimyBeesPlugin plugin, BeeAtlasCategoryFactory factory) {
         if (initialized) {
-            throw new UnsupportedOperationException("SlimyBees categories can only be registered once!");
+            throw new UnsupportedOperationException("SlimyBees 类别只能注册一次!");
         }
 
         initialized = true;
 
         Categories.ITEMS.register(plugin);
 
-        ItemStack displayItem = new CustomItemStack(SlimyBeesHeadTexture.DRONE.getAsItemStack(), "Bee Atlas");
+        ItemStack displayItem = new CustomItemStack(SlimyBeesHeadTexture.DRONE.getAsItemStack(), "蜜蜂等位基因");
         factory.createList(displayItem).register(plugin);
     }
 }

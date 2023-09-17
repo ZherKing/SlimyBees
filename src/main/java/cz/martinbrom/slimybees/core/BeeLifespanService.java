@@ -16,7 +16,7 @@ public class BeeLifespanService {
     private final int cycleDuration;
 
     public BeeLifespanService(Config config) {
-        Validate.notNull(config, "The config cannot be null!");
+        Validate.notNull(config, "配置不能为空!");
 
         int duration = config.getInt("options.breeding-cycle-duration");
         cycleDuration = duration < 1 ? DEFAULT_CYCLE_DURATION : duration;

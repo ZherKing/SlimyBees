@@ -9,7 +9,7 @@ public class PatternUtil {
     // prevent instantiation
     private PatternUtil() {}
 
-    public static final Pattern TOME_OWNER_LORE = Pattern.compile(ChatColors.color("&7Owner: &b") + "\\w+");
+    public static final Pattern TOME_OWNER_LORE = Pattern.compile(ChatColors.color("&7主人: &b") + "\\w+");
 
     public static final Pattern LOWER_SNAKE = Pattern.compile("[a-z_]+");
     public static final Pattern UPPER_SNAKE = Pattern.compile("[A-Z_]+");

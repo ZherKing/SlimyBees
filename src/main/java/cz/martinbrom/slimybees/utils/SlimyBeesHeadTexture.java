@@ -24,8 +24,8 @@ public enum SlimyBeesHeadTexture {
     private final UUID uuid;
 
     SlimyBeesHeadTexture(String texture) {
-        Validate.notNull(texture, "Texture cannot be null");
-        Validate.isTrue(CommonPatterns.HEXADECIMAL.matcher(texture).matches(), "Textures must be in hexadecimal.");
+        Validate.notNull(texture, "纹理不能为空");
+        Validate.isTrue(CommonPatterns.HEXADECIMAL.matcher(texture).matches(), "纹理必须是十六进制.");
 
         this.texture = texture;
         this.uuid = UUID.nameUUIDFromBytes(texture.getBytes(StandardCharsets.UTF_8));

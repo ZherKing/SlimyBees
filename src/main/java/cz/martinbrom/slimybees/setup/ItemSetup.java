@@ -37,7 +37,7 @@ public class ItemSetup {
 
     public static void setUp(SlimyBeesPlugin plugin) {
         if (initialized) {
-            throw new UnsupportedOperationException("SlimyBees items can only be registered once!");
+            throw new UnsupportedOperationException("SlimyBees 物品只能注册一次!");
         }
 
         initialized = true;

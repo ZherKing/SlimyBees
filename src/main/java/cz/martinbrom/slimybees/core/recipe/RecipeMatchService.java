@@ -17,7 +17,7 @@ public class RecipeMatchService {
 
     @Nullable
     public static GuaranteedRecipe match(@Nullable List<ItemStack> items, List<AbstractRecipe> recipes) {
-        Validate.notEmpty(recipes, "Cannot match recipes for empty or null recipes!");
+        Validate.notEmpty(recipes, "无法匹配空食谱!");
 
         if (items == null || items.isEmpty()) {
             return null;

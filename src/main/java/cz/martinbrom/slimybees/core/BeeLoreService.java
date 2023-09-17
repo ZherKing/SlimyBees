@@ -135,8 +135,8 @@ public class BeeLoreService {
      */
     @Nonnull
     public ItemStack updateLore(ItemStack item, Genome genome) {
-        Validate.notNull(item, "The ItemStack cannot be null when updating item lore!");
-        Validate.notNull(genome, "The genome cannot be null when updating item lore!");
+        Validate.notNull(item, "在更新物品 lore 的时候 ItemStackThe 不能为空!");
+        Validate.notNull(genome, "在更新物品 lore 的时候 基因组不能为空!");
 
         if (!item.hasItemMeta()) {
             return item;

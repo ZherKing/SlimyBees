@@ -41,7 +41,7 @@ public class SlimyBeesPlayerProfile {
     private boolean markedForDeletion = false;
 
     private SlimyBeesPlayerProfile(UUID uuid) {
-        Validate.notNull(uuid, "Cannot create a profile for null UUID!");
+        Validate.notNull(uuid, "无法为空 UUID 创建配置文件!");
 
         this.uuid = uuid;
 
@@ -62,7 +62,7 @@ public class SlimyBeesPlayerProfile {
      */
     @Nonnull
     public static SlimyBeesPlayerProfile get(OfflinePlayer p) {
-        Validate.notNull(p, "Cannot get a profile for null player!");
+        Validate.notNull(p, "无法获取不存在玩家的个人资料!");
 
         return get(p.getUniqueId());
     }
@@ -76,7 +76,7 @@ public class SlimyBeesPlayerProfile {
      */
     @Nonnull
     public static SlimyBeesPlayerProfile get(UUID uuid) {
-        Validate.notNull(uuid, "Cannot get a profile for null UUID!");
+        Validate.notNull(uuid, "无法获取空 UUID 的配置文件!");
 
         SlimyBeesPlayerProfile profile = find(uuid);
         if (profile == null) {
@@ -158,7 +158,7 @@ public class SlimyBeesPlayerProfile {
      *                 false if "undiscovered"
      */
     public void discoverBee(String speciesUid, boolean discover) {
-        Validate.notNull(speciesUid, "The discovered bee species uid must not be null!");
+        Validate.notNull(speciesUid, "发现的蜂种 uid 不能为 null!");
 
         String key = BEE_SPECIES_KEY + "." + speciesUid;
         if (discover) {
@@ -180,7 +180,7 @@ public class SlimyBeesPlayerProfile {
      * @return True if the player discovered given species, false otherwise
      */
     public boolean hasDiscovered(AlleleSpecies species) {
-        Validate.notNull(species, "The bee species must not be null!");
+        Validate.notNull(species, "蜜蜂种类不能为空!");
 
         return discoveredBees.contains(species.getUid());
     }

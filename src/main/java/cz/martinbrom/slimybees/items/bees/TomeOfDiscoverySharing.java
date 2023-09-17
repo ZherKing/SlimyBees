@@ -65,7 +65,7 @@ public class TomeOfDiscoverySharing extends SimpleSlimefunItem<ItemUseHandler> {
                     // discover every discovery of the assigned owner and consume the tome
                     long count = discoveryService.discoverAllByOwner(p, UUID.fromString(ownerStringUUID));
                     if (count == 0) {
-                        p.sendMessage(ChatColor.DARK_GRAY + "There were no more bees to discover from this tome!");
+                        p.sendMessage(ChatColor.DARK_GRAY + "从这本书中再也找不到蜜蜂了!");
                     }
 
                     if (p.getGameMode() != GameMode.CREATIVE) {

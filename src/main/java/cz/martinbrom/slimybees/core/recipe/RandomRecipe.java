@@ -36,7 +36,7 @@ public class RandomRecipe extends AbstractRecipe {
     }
 
     public RandomRecipe addOutputs(List<ChanceItemStack> items) {
-        Validate.notNull(items, "Cannot add null items to a RandomRecipe!");
+        Validate.notNull(items, "无法将空项目添加到 RandomRecipe!");
 
         for (ChanceItemStack item : items) {
             addOutput(item);

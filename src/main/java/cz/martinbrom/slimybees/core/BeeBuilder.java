@@ -67,10 +67,10 @@ public class BeeBuilder {
     }
 
     public BeeBuilder(String uid, ChatColor color, boolean dominant) {
-        Validate.notEmpty(uid, "The bee uid must not be null or empty!");
-        Validate.isTrue(PatternUtil.SPECIES_UID_PATTERN.matcher(uid).matches(), "The bee uid must start with the species prefix " +
-                "and be in the lower snake case format, got " + uid + "!");
-        Validate.notNull(color, "The bee color must not be null!");
+        Validate.notEmpty(uid, "蜜蜂的 UID 不得为空!");
+        Validate.isTrue(PatternUtil.SPECIES_UID_PATTERN.matcher(uid).matches(), "蜜蜂 UID 必须以蜜蜂物种为前缀 " +
+                "且必须使用蛇形命名法 " + uid + "!");
+        Validate.notNull(color, "蜜蜂颜色不能为空!");
 
         alleleService = SlimyBeesPlugin.getAlleleService();
         alleleRegistry = SlimyBeesPlugin.getAlleleRegistry();
@@ -165,7 +165,7 @@ public class BeeBuilder {
      */
     @Nonnull
     public BeeBuilder addGroupInformation(Consumer<BeeBuilder> groupDefinition) {
-        Validate.notNull(groupDefinition, "Cannot update BeeBuilder by null group definition!");
+        Validate.notNull(groupDefinition, "无法通过空组定义更新 BeeBuilder!");
 
         groupDefinition.accept(this);
         return this;
@@ -180,9 +180,9 @@ public class BeeBuilder {
      */
     @Nonnull
     public BeeBuilder addDefaultAlleleValue(ChromosomeType chromosomeType, String uid) {
-        Validate.notNull(chromosomeType, "Cannot set an allele value for null chromosome type!");
+        Validate.notNull(chromosomeType, "无法设置空染色体类型的等位基因值!");
         if (chromosomeType == ChromosomeType.SPECIES) {
-            throw new IllegalArgumentException("Cannot set the species chromosome directly! It is done automatically!");
+            throw new IllegalArgumentException("无法直接设置物种染色体!它是自动完成的!");
         }
 
         alleleService.set(partialTemplate, chromosomeType, uid);
@@ -199,8 +199,8 @@ public class BeeBuilder {
      */
     @Nonnull
     public BeeBuilder addMutation(String firstParentUid, String secondParentUid, double chance) {
-        Validate.notEmpty(firstParentUid, "The uid of the first parent cannot be empty or null!");
-        Validate.notEmpty(secondParentUid, "The uid of the second parent cannot be empty or null!");
+        Validate.notEmpty(firstParentUid, "第一个父级的 uid 不能为空!");
+        Validate.notEmpty(secondParentUid, "第二个父级的 uid 不能为空!");
 
         mutations.add(new Triple<>(firstParentUid, secondParentUid, chance));
         return this;
@@ -255,8 +255,8 @@ public class BeeBuilder {
             Allele child = alleleRegistry.get(ChromosomeType.SPECIES, uid);
 
             if (firstParent == null || secondParent == null || child == null) {
-                SlimyBeesPlugin.logger().warning("Could not register a mutation for " + uid + " and parents "
-                        + dto.getFirst() + " & " + dto.getSecond() + " because one of the uids is not registered!");
+                SlimyBeesPlugin.logger().warning("无法注册突变 " + uid + " 和 parents "
+                        + dto.getFirst() + " & " + dto.getSecond() + " 因为其中一个uid没有注册!");
             } else {
                 BeeMutationDTO mutation = new BeeMutationDTO(dto.getFirst(), dto.getSecond(), uid, dto.getThird());
                 beeRegistry.registerMutation(mutation);

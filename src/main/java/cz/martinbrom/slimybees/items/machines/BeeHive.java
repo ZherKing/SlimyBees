@@ -280,7 +280,7 @@ public class BeeHive extends AbstractTickingContainer implements MachineProcessH
 
         // we need exactly one princess and one drone
         if (!(princessSfItem instanceof Princess) || !(droneSfItem instanceof Drone)) {
-            waitAndShowError(menu, b, BREEDING_WAIT_TICKS, "Items are not a princess and a drone");
+            waitAndShowError(menu, b, BREEDING_WAIT_TICKS, "物品不是雌蜂和雄峰");
             return;
         }
 
@@ -288,14 +288,14 @@ public class BeeHive extends AbstractTickingContainer implements MachineProcessH
         Genome princessGenome = geneticService.getGenomeUnsafe(princessItem);
         Genome droneGenome = geneticService.getGenomeUnsafe(droneItem);
         if (princessGenome == null || droneGenome == null) {
-            waitAndShowError(menu, b, BREEDING_WAIT_TICKS, "Invalid bee genome");
+            waitAndShowError(menu, b, BREEDING_WAIT_TICKS, "蜜蜂基因组无效");
             return;
         }
 
         Material material = princessGenome.getPlantValue();
         // air stands for null because allele values cannot be null
         if (!material.isAir() && !blockSearchService.containsBlock(b, princessGenome.getRangeValue(), material)) {
-            waitAndShowError(menu, b, MISSING_PLANT_WAIT_TICKS, "The bee is missing its required plant");
+            waitAndShowError(menu, b, MISSING_PLANT_WAIT_TICKS, "蜜蜂缺少所需的植物");
             return;
         }
 
@@ -334,9 +334,9 @@ public class BeeHive extends AbstractTickingContainer implements MachineProcessH
         CustomItemStack errorItem = new CustomItemStack(Material.RED_CONCRETE_POWDER,
                 ChatColor.RED + message,
                 "",
-                ChatColor.GRAY + "The hive will try again in a few moments...",
-                ChatColor.GRAY + "If you don't feel like waiting, click",
-                ChatColor.GRAY + "this item to skip the cooldown!");
+                ChatColor.GRAY + "蜂巢稍后会再次尝试...",
+                ChatColor.GRAY + "如果您不想等待，请点击",
+                ChatColor.GRAY + "这个物品可以跳过冷却时间!");
 
         menu.replaceExistingItem(STATUS_SLOT, errorItem);
     }

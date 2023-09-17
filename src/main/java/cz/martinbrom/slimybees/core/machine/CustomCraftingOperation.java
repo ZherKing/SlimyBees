@@ -27,7 +27,7 @@ public class CustomCraftingOperation implements MachineOperation {
     public CustomCraftingOperation(List<ItemStack> ingredients, List<ItemStack> outputs, int totalTicks) {
         Validate.notNull(ingredients, "成分不能为空或为空!");
         Validate.notNull(outputs, "输出不能为空!");
-        Validate.isTrue(totalTicks >= 0, "The amount of total ticks must be a positive integer or zero, received: " + totalTicks);
+        Validate.isTrue(totalTicks >= 0, "数量必须是正整数或零, received: " + totalTicks);
 
         this.ingredients = ingredients;
         this.outputs = outputs;
@@ -36,7 +36,7 @@ public class CustomCraftingOperation implements MachineOperation {
 
     @Override
     public void addProgress(int num) {
-        Validate.isTrue(num > 0, "Progress must be positive!");
+        Validate.isTrue(num > 0, "进行必须是活跃的!");
         currentTicks += num;
     }
 

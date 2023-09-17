@@ -79,9 +79,9 @@ public class ElectricCentrifuge extends AbstractElectricMachine {
 
         displayRecipes.add(anyComb);
         displayRecipes.add(new CustomItemStack(Material.DIAMOND,
-                ChatColor.YELLOW + "Bee product",
-                ChatColor.YELLOW + "Consult the Bee Atlas or the addon wiki",
-                ChatColor.YELLOW + "for more information"));
+                ChatColor.YELLOW + "蜂产品",
+                ChatColor.YELLOW + "可以查阅 wiki",
+                ChatColor.YELLOW + "获得更多信息"));
 
         return displayRecipes;
     }

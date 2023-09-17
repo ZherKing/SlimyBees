@@ -30,8 +30,8 @@ public class TreeGrowListener implements Listener {
     private final double spawnChance;
 
     public TreeGrowListener(SlimyBeesPlugin plugin, SlimyBeesRegistry registry, double spawnChance) {
-        Validate.isTrue(spawnChance >= 0 && spawnChance <= 1, "The chance to spawn a nest while growing a tree" +
-                " must be between 0 and 1 (inclusive)!");
+        Validate.isTrue(spawnChance >= 0 && spawnChance <= 1, "种植树时有机会生成巢穴" +
+                " 必须介于 0 和 1 之间（包括）!");
 
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
 

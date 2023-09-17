@@ -60,7 +60,7 @@ public class BeeSetup {
 
     public static void setUp(SlimyBeesPlugin plugin) {
         if (initialized) {
-            throw new UnsupportedOperationException("SlimyBees bees can only be registered once!");
+            throw new UnsupportedOperationException("SlimyBees 蜜蜂只能注册一次!");
         }
 
         initialized = true;
@@ -181,7 +181,7 @@ public class BeeSetup {
                         .setSecret(false),
         };
 
-        SlimyBeesPlugin.logger().info("Registered " + bees.length + " bee species!");
+        SlimyBeesPlugin.logger().info("已注册 " + bees.length + " 蜜蜂物种!");
         //noinspection SimplifyStreamApiCallChains
         List<BeeBuilder> nestingBees = Arrays.stream(bees)
                 // important line below, do not remove!!

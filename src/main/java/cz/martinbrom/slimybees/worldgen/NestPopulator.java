@@ -86,7 +86,7 @@ public class NestPopulator extends BlockPopulator {
                 createNest(nestBlock, nest);
 
                 // TODO: 16.05.21 Change back to fine or similar logging level
-                SlimyBeesPlugin.logger().info("Successfully generated a Ground Nest "
+                SlimyBeesPlugin.logger().info("成功生成巢穴 "
                         + "of type: " + nest.getNestId()
                         + " at [x=" + x
                         + ", y=" + nestBlock.getY()

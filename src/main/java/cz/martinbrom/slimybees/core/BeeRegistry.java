@@ -47,7 +47,7 @@ public class BeeRegistry {
      * @param mutation The {@link BeeMutationDTO} to register
      */
     public void registerMutation(BeeMutationDTO mutation) {
-        Validate.notNull(mutation, "Cannot register a null mutation!");
+        Validate.notNull(mutation, "无法注册无效突变!");
 
         String child = mutation.getChild();
 
@@ -57,7 +57,7 @@ public class BeeRegistry {
         if (parentMutations == null) {
             parentMutations = new ArrayList<>();
         } else if (parentMutations.contains(mutation)) {
-            throw new IllegalArgumentException("Cannot register a mutation with the same parents and child twice!");
+            throw new IllegalArgumentException("不能两次注册突变 with the same parents and child twice!");
         }
 
         parentMutations.add(mutation);
@@ -172,8 +172,8 @@ public class BeeRegistry {
      */
     public void registerPartialTemplate(Allele[] template) {
         Validate.notNull(template, "The partial template cannot be null!");
-        Validate.isTrue(template.length == CHROMOSOME_COUNT, "The partial template needs to have exactly " + CHROMOSOME_COUNT + " alleles!");
-        Validate.notNull(template[ChromosomeType.SPECIES.ordinal()], "The partial template needs to contain the species chromosome!");
+        Validate.isTrue(template.length == CHROMOSOME_COUNT, "部分模板需要精确的 " + CHROMOSOME_COUNT + " 等位基因!");
+        Validate.notNull(template[ChromosomeType.SPECIES.ordinal()], "部分模板需要包含物种染色体!");
 
         templateMap.put(template[ChromosomeType.SPECIES.ordinal()].getUid(), template);
     }
@@ -186,14 +186,14 @@ public class BeeRegistry {
      * @param template The default bee template
      */
     public void registerDefaultTemplate(Allele[] template) {
-        Validate.notNull(template, "The default template cannot be null!");
-        Validate.isTrue(template.length == CHROMOSOME_COUNT, "The default template needs to have exactly " + CHROMOSOME_COUNT + " alleles!");
+        Validate.notNull(template, "这个默认的模板不能为空!");
+        Validate.isTrue(template.length == CHROMOSOME_COUNT, "这个默认的模板需要更加准确的 " + CHROMOSOME_COUNT + " 等位基因!");
 
         // skip species, it can be null in the default template
         for (int i = 1; i < CHROMOSOME_COUNT; i++) {
             if (template[i] == null) {
-                throw new IllegalArgumentException("Chromosome of type " + ChromosomeType.values()[i]
-                        + " is missing from the default template!");
+                throw new IllegalArgumentException("染色体类型 " + ChromosomeType.values()[i]
+                        + " 默认模板中缺少!");
             }
         }
 
@@ -217,7 +217,7 @@ public class BeeRegistry {
      * @param species The {@link AlleleSpecies} to be always visible in the BeeAtlas
      */
     public void registerAlwaysDisplayedSpecies(AlleleSpecies species) {
-        Validate.notNull(species, "Cannot register null species as always displayed!");
+        Validate.notNull(species, "无法注册一直显示的空物种!");
 
         alwaysDisplayedSpecies.add(species);
     }

@@ -46,7 +46,7 @@ public class AlleleSetup {
 
     public static void setUp() {
         if (initialized) {
-            throw new UnsupportedOperationException("SlimyBees Alleles can only be registered once!");
+            throw new UnsupportedOperationException("SlimyBees 等位基因只能注册一次!");
         }
 
         initialized = true;

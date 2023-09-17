@@ -26,8 +26,8 @@ public class BlockSearchService {
      * @return True if the area contains given {@link Material}, false otherwise
      */
     public boolean containsBlock(Block center, int range, Material material) {
-        Validate.notNull(center, "Cannot search for a block because the center block is null!");
-        Validate.notNull(material, "Cannot search for a block because the searched material is null!");
+        Validate.notNull(center, "无法搜索方块，因为中心方块为空!");
+        Validate.notNull(material, "无法搜索方块，因为搜索到的材料为空!");
 
         BlockPosition centerPos = new BlockPosition(center);
         BlockPosition cachedPos = plantPositions.get(centerPos);

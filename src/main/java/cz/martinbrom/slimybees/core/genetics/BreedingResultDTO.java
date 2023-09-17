@@ -14,9 +14,9 @@ public class BreedingResultDTO {
     private final int ticks;
 
     public BreedingResultDTO(ItemStack princess, ItemStack[] drones, int ticks) {
-        Validate.notNull(princess, "The princess cannot be null!");
-        Validate.notEmpty(drones, "The drones cannot be empty or null!");
-        Validate.isTrue(ticks >= 0, "The amount of ticks must be a positive integer or zero, received: " + ticks);
+        Validate.notNull(princess, "雌蜂不能为空!");
+        Validate.notEmpty(drones, "雄峰不能为空!");
+        Validate.isTrue(ticks >= 0, "数量必须是正整数或零: " + ticks);
 
         this.princess = princess;
         this.drones = drones;

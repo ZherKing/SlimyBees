@@ -105,7 +105,7 @@ public class SlimyBeesPlugin extends JavaPlugin implements SlimefunAddon {
     }
 
     public void onPluginStart() {
-        logger().info("Started loading SlimyBees");
+        logger().info("开始加载 SlimyBees");
 
         // TODO: 15.05.21 Config stuff
         // TODO: 15.05.21 Auto update
@@ -127,7 +127,7 @@ public class SlimyBeesPlugin extends JavaPlugin implements SlimefunAddon {
         int interval = 5;
         getServer().getScheduler().runTaskTimer(this, this::saveAllPlayers, 2000L, interval * 60L * 20L);
 
-        logger().info("Finished loading SlimyBees");
+        logger().info("SlimyBees 加载完成");
     }
 
     @Override

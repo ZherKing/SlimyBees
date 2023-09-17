@@ -24,7 +24,7 @@ public abstract class AbstractRecipe {
     }
 
     protected AbstractRecipe(List<ItemStack> ingredients, int duration) {
-        Validate.notEmpty(ingredients, "The recipe ingredients cannot be empty or null!");
+        Validate.notEmpty(ingredients, "配方成分不能为空!");
 
         this.ingredients = ingredients;
         this.duration = duration;

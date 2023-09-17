@@ -27,9 +27,9 @@ public class RandomizedItemStack {
      * @param maxCount Maximum amount of items to get (inclusive)
      */
     public RandomizedItemStack(ItemStack itemStack, int minCount, int maxCount) {
-        Validate.notNull(itemStack, "The itemStack must not be null!");
-        Validate.isTrue(maxCount > minCount, "The maxCount must be greater than the minCount");
-        Validate.isTrue(maxCount <= itemStack.getMaxStackSize(), "The maxCount must be less than or exactly " + itemStack.getMaxStackSize());
+        Validate.notNull(itemStack, "itemStack 不能为空!");
+        Validate.isTrue(maxCount > minCount, "最大数量必须大于最小数量");
+        Validate.isTrue(maxCount <= itemStack.getMaxStackSize(), "最大数量必须小于或等于 " + itemStack.getMaxStackSize());
 
         this.itemStack = itemStack;
         this.minCount = minCount;

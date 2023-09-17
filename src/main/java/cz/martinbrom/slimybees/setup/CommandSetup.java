@@ -22,7 +22,7 @@ public class CommandSetup {
 
     public static void setUp(SlimyBeesPlugin plugin) {
         if (initialized) {
-            throw new UnsupportedOperationException("SlimyBees Commands can only be registered once!");
+            throw new UnsupportedOperationException("SlimyBees 命令只能注册一次!");
         }
 
         initialized = true;

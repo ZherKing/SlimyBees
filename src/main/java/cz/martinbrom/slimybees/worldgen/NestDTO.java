@@ -21,12 +21,12 @@ public class NestDTO {
     private String nestId;
 
     public NestDTO(World.Environment environment, Biome[] biomes, Material[] floorMaterials, double spawnChance) {
-        Validate.notNull(environment, "Nest environment cannot be null!");
-        Validate.notEmpty(biomes, "Nest biomes cannot be null or empty!");
-        Validate.noNullElements(biomes, "Nest biomes cannot contain null!");
-        Validate.notEmpty(floorMaterials, "Nest floor materials cannot be null or empty!");
-        Validate.noNullElements(floorMaterials, "Nest floor materials cannot contain null!");
-        Validate.isTrue(spawnChance > 0 && spawnChance <= 1, "Spawn chance must be between 0% (exclusive) and 100% (inclusive)!");
+        Validate.notNull(environment, "嵌套环境不能为空!");
+        Validate.notEmpty(biomes, "巢穴生物群系不能为空!");
+        Validate.noNullElements(biomes, "巢穴生物群系不能包含空!");
+        Validate.notEmpty(floorMaterials, "Nest 地面材质不能为空!");
+        Validate.noNullElements(floorMaterials, "Nest地面材质不能包含空!");
+        Validate.isTrue(spawnChance > 0 && spawnChance <= 1, "生成几率必须介于 0%（不包含）和 100%（包含）之间!");
 
         this.environment = environment;
         this.biomes = biomes;
@@ -55,13 +55,13 @@ public class NestDTO {
 
     @Nonnull
     public String getNestId() {
-        Validate.notNull(nestId, "The nest id cannot be null, you likely forgot to call setNestItemStack()!");
+        Validate.notNull(nestId, "嵌套 id 不能为 null，您可能忘记调用etNestItemStack()!");
 
         return nestId;
     }
 
     public void setItemStack(SlimefunItemStack nestItemStack) {
-        Validate.notNull(nestItemStack, "The bee nest item cannot be null!");
+        Validate.notNull(nestItemStack, "蜂巢项目不能为空!");
 
         nestId = nestItemStack.getItemId();
     }

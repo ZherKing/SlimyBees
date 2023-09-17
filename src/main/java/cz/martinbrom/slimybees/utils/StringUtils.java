@@ -50,8 +50,8 @@ public class StringUtils {
 
     @Nonnull
     public static String nameToUid(ChromosomeType type, String name) {
-        Validate.notNull(type, "Given chromosome type cannot be null!");
-        Validate.notEmpty(name, "Given species name cannot be null or empty!");
+        Validate.notNull(type, "给定的染色体类型不能为空!");
+        Validate.notEmpty(name, "给定的物种名称不能为空!");
 
         return (type.name() + ":" + name).toLowerCase(Locale.ROOT);
     }

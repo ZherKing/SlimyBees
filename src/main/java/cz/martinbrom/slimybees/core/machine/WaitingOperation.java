@@ -13,13 +13,13 @@ public class WaitingOperation implements MachineOperation {
     private int currentTicks = 0;
 
     public WaitingOperation(int totalTicks) {
-        Validate.isTrue(totalTicks >= 0, "The amount of total ticks must be a positive integer or zero, received: " + totalTicks);
+        Validate.isTrue(totalTicks >= 0, "数量必须是正整数或零: " + totalTicks);
         this.totalTicks = totalTicks;
     }
 
     @Override
     public void addProgress(int num) {
-        Validate.isTrue(num > 0, "Progress must be positive!");
+        Validate.isTrue(num > 0, "进程必须是活跃的!");
         currentTicks += num;
     }
 

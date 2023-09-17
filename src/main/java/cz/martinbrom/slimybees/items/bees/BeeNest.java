@@ -52,9 +52,9 @@ public class BeeNest extends SlimefunItem {
      * @param count The amount of the dropped {@link ItemStack}
      */
     public void addExtraDrop(ItemStack drop, int count) {
-        Validate.notNull(drop, "BeeNest drop cannot be null!");
-        Validate.isTrue(count > 0, "The count must be greater than zero");
-        Validate.isTrue(!drop.getType().isAir(), "BeeNest drop cannot be of type AIR!");
+        Validate.notNull(drop, "BeeNest 掉落不能为空!");
+        Validate.isTrue(count > 0, "计数必须大于零");
+        Validate.isTrue(!drop.getType().isAir(), "BeeNest 掉落物不能为空气!");
 
         extraDrops.add(new Pair<>(drop, count));
     }
@@ -65,11 +65,11 @@ public class BeeNest extends SlimefunItem {
      * @param drop The {@link RandomizedItemStack} to drop when broken
      */
     public void addRandomDrop(RandomizedItemStack drop) {
-        Validate.notNull(drop, "BeeNest drop cannot be null!");
-        Validate.isTrue(!drop.getItemStack().getType().isAir(), "BeeNest drop cannot be of type AIR!");
+        Validate.notNull(drop, "BeeNest 掉落不能为空!");
+        Validate.isTrue(!drop.getItemStack().getType().isAir(), "BeeNest 掉落物不能为空气!");
 
         if (getState() != ItemState.UNREGISTERED) {
-            throw new UnsupportedOperationException("You cannot add extra drops after the BeeNest was registered.");
+            throw new UnsupportedOperationException("BeeNest 注册后，您无法添加额外的掉落物");
         }
 
         randomDrops.add(drop);

@@ -23,14 +23,14 @@ public class GuaranteedRecipe extends AbstractRecipe {
     }
 
     public GuaranteedRecipe addOutput(ItemStack item) {
-        Validate.notNull(item, "Cannot add a null item to a GuaranteedRecipe!");
+        Validate.notNull(item, "无法将空项目添加到 GuaranteedRecipe!");
 
         outputs.add(item);
         return this;
     }
 
     public GuaranteedRecipe addOutputs(ItemStack[] items) {
-        Validate.notNull(items, "Cannot add null items to a GuaranteedRecipe!");
+        Validate.notNull(items, "无法将空项目添加到 GuaranteedRecipe!");
 
         for (ItemStack item : items) {
             addOutput(item);
@@ -40,7 +40,7 @@ public class GuaranteedRecipe extends AbstractRecipe {
     }
 
     public GuaranteedRecipe addOutputs(List<ItemStack> items) {
-        Validate.notNull(items, "Cannot add null items to a GuaranteedRecipe!");
+        Validate.notNull(items, "无法将空项目添加到 GuaranteedRecipe!");
 
         for (ItemStack item : items) {
             addOutput(item);

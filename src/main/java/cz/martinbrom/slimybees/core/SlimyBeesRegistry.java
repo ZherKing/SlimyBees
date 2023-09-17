@@ -39,7 +39,7 @@ public class SlimyBeesRegistry {
      * @param nest New {@link NestDTO} to register for world-gen
      */
     public void registerNest(NestDTO nest) {
-        Validate.notNull(nest, "Cannot register a null nest!");
+        Validate.notNull(nest, "无法注册空嵌套!");
 
         World.Environment env = nest.getEnvironment();
         Map<Biome, List<NestDTO>> nestMap = getNestMapForEnvironment(env);
@@ -63,7 +63,7 @@ public class SlimyBeesRegistry {
 
     @Nullable
     private Map<Biome, List<NestDTO>> getNestMapForWorld(World world) {
-        Validate.notNull(world, "Cannot get the nest map for null world!");
+        Validate.notNull(world, "无法获取空世界的嵌套地图!");
 
         return getNestMapForEnvironment(world.getEnvironment());
     }

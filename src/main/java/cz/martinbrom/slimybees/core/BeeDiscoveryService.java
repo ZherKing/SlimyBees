@@ -82,8 +82,8 @@ public class BeeDiscoveryService {
      * @return True, if a change was made, false otherwise.
      */
     public boolean discover(Player p, Genome genome) {
-        Validate.notNull(p, "The player cannot be null!");
-        Validate.notNull(genome, "The genome cannot be null!");
+        Validate.notNull(p, "这个玩家不能为无!");
+        Validate.notNull(genome, "基因组不能为空!");
 
         AlleleSpecies species = genome.getSpecies();
         // need to discover first otherwise the player who discovered
@@ -125,8 +125,8 @@ public class BeeDiscoveryService {
      * @return True, if a change was made, false otherwise.
      */
     public boolean discover(Player p, AlleleSpecies species) {
-        Validate.notNull(p, "The player cannot be null!");
-        Validate.notNull(species, "The species cannot be null!");
+        Validate.notNull(p, "这个玩家不能为空!");
+        Validate.notNull(species, "这个物种不能为空!");
 
         return discoverInner(p, species, true);
     }
@@ -139,8 +139,8 @@ public class BeeDiscoveryService {
      * @return True, if a change was made, false otherwise.
      */
     public boolean undiscover(Player p, AlleleSpecies species) {
-        Validate.notNull(p, "The player cannot be null!");
-        Validate.notNull(species, "The species cannot be null!");
+        Validate.notNull(p, "这个玩家不能为空!");
+        Validate.notNull(species, "这个物种不能为空!");
 
         return discoverInner(p, species, false);
     }

@@ -19,7 +19,7 @@ public class BeeProductionService {
     private final BeeLifespanService lifespanService;
 
     public BeeProductionService(BeeLifespanService lifespanService) {
-        Validate.notNull(lifespanService, "BeeLifespanService cannot be null!");
+        Validate.notNull(lifespanService, "BeeLifespanService 不能为无!");
 
         this.lifespanService = lifespanService;
     }

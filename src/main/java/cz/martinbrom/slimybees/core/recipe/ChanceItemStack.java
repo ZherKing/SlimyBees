@@ -14,8 +14,8 @@ public class ChanceItemStack {
     private final double chance;
 
     public ChanceItemStack(ItemStack item, double chance) {
-        Validate.notNull(item, "Cannot add a null item to a ChanceItemStack!");
-        Validate.isTrue(chance >= 0 && chance <= 1, "Chance must be between 0 and 100%!");
+        Validate.notNull(item, "无法将空项目添加到 ChanceItemStack!");
+        Validate.isTrue(chance >= 0 && chance <= 1, "几率必须介于 0 到 100% 之间!");
 
         this.item = item;
         this.chance = chance;
