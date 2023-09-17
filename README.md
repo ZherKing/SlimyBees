@@ -4,7 +4,9 @@
 
 # 林业蜜蜂
 
-**该附属暂未汉化完成。**
+**该附属汉化完成，但未经过完整检查和细节更正。**
+
+生物不太好 部分东西在翻译的时候看不出来是什么东西
 
 SlimyBees 是一款 Slimefun4 插件，其灵感来源于
 [Forestry](https://www.curseforge.com/minecraft/mc-mods/forestry).
@@ -14,13 +16,13 @@ SlimyBees 是一款 Slimefun4 插件，其灵感来源于
 
 它可以通过选择性繁殖来改进，为最后阶段提供一个有趣的养老游戏（。
 
-## Features
+## 特色
 目前的功能包括:
-* Bee Hive world generation
-* The ability to breed bees to discover new species
-* Basic set of species (mainly honey production for now)
+* 世界生成蜂巢
+* 培育蜜蜂发现新物种的能力
+* 基本品种（目前主要是蜂蜜生产）
 
-## Credits
-Many thanks go to:
-* SirSengir and the team behind Forestry
-* TheBusyBiscuit and the team behind Slimefun4 
+## 制作人员
+感谢以下制作人员:
+* SirSengir 和 Forestry 背后的团队
+* TheBusyBiscuit 和 Slimefun4 背后的团队 
