@@ -21,11 +21,11 @@ public class Allele implements Comparable<Allele> {
 
     public Allele(String uid, String name, boolean dominant) {
         Validate.notEmpty(uid, "等位基因 uid 不得为空或为空！");
-        Validate.isTrue(PatternUtil.UID_PATTERN.matcher(uid).matches(), "等位基因 uid 必须以前缀开头 " +
-                "and be in the lower snake case format, got " + uid + "!");
+        Validate.isTrue(PatternUtil.UID_PATTERN.matcher(uid).matches(), "等位基因 uid 必须以前缀开头，" +
+                "并且以小写蛇形命名法命名，但得到了 " + uid + "！");
         Validate.notEmpty(name, "等位基因名称不得为无或空!");
-        Validate.isTrue(PatternUtil.UPPER_SNAKE.matcher(name).matches(), "等位基因名称必须为 " +
-                "in the upper snake case format, got " + name + "!");
+        Validate.isTrue(PatternUtil.UPPER_SNAKE.matcher(name).matches(), "等位基因名称必须为" +
+                "大写蛇形命名法命名，但得到了 " + name + "！");
 
         this.uid = uid;
         this.name = name;
